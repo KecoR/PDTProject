@@ -1,0 +1,42 @@
+Tabel :
+
+1. Perpus
+  a. id_perpus            int(11) AI
+  b. kode_perpus          varchar(8) Unique
+  c. nama_univ            varhcar(25)
+  d. alamat_perpus           varchar(25)
+
+2. Buku
+  a. id_buku              int(11) AI
+  b. kode_buku            varchar(8) Unique
+  c. judul_buku           varchar(50)
+  d. pengarang_buku       varchar(50)
+  e. penerbit_buku        varchar(50)
+  f. tahun_terbit         int(4)
+  g. deskripsi_buku       varhcar(255)
+  h. lokasi_buku          REFERENCES id_perpus
+  i. stok_buku            int(10)
+
+3. User
+  a. id_user              int(11) AI
+  b. username             varchar(8) Unique
+  c. password             varhcar(12)
+  d. nama_lengkap         varhcar(25)
+  e. email                varchar(50)
+  f. nama_univ            REFERENCES nama_univ
+
+4. Peminjaman
+  a. id_peminjaman        int(11) AI
+  b. username             REFERENCES username
+  c. kode_buku            REFERENCES kode_buku
+  d. judul_buku           REFERENCES judul_buku
+  e. tgl_peminjaman       date/time
+  f. tgl_pengembalian     date/time
+
+5. Denda
+  a. id_denda             int(11) AI
+  b. kode_denda           varchar(12) Unique
+  c. nama_lengkap         REFERENCES nama_lengkap
+  d. @1hari               varchar(8)
+  e. lama_hari            varchar(8)
+  f. total_bayar          varchar(12)
