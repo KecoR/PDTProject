@@ -4,7 +4,7 @@ Tabel :
   a. id_perpus            int(11) AI
   b. kode_perpus          varchar(8) Unique
   c. nama_univ            varhcar(25)
-  d. alamat_perpus           varchar(25)
+  d. alamat_perpus        varchar(25)
 
 2. Buku
   a. id_buku              int(11) AI
